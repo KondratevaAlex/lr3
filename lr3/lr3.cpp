@@ -2,10 +2,21 @@
 //
 
 #include <iostream>
+#include "questionnaire.h"
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    setlocale(LC_ALL, "Rus");
+
+    questionnaire q;
+    string filename = "answers.txt";
+    
+
+    if (q.loadAnswersFromFile(filename)) {
+        cout << "bip";
+    }
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

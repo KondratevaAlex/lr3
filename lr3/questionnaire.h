@@ -8,7 +8,7 @@ class questionnaire
 {
 private:
 	int answer;
-	int answersMatr[2][2];
+	int answersMatr[15][15];
 public:
 	void setAnswer(int ans);
 	int getAnswer();

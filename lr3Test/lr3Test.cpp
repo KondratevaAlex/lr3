@@ -33,7 +33,7 @@ namespace lr3Test
 
 			string filename = "test";
 			ofstream of(filename);
-			of << "1 2\n3 4\n";
+			of << "1 2 3 4 5 1 2 3 4 5 1 2 3 4 5\n2 3 4 5 1 2 3 4 5 1 2 3 4 5 1\n3 4 5 1 2 3 4 5 1 2 3 4 5 1 2\n4 5 1 2 3 4 5 1 2 3 4 5 1 2 3\n5 1 2 3 4 5 1 2 3 4 5 1 2 3 4\n1 2 3 4 5 1 2 3 4 5 1 2 3 4 5\n2 3 4 5 1 2 3 4 5 1 2 3 4 5 1\n3 4 5 1 2 3 4 5 1 2 3 4 5 1 2\n4 5 1 2 3 4 5 1 2 3 4 5 1 2 3\n5 1 2 3 4 5 1 2 3 4 5 1 2 3 4\n1 2 3 4 5 1 2 3 4 5 1 2 3 4 5\n2 3 4 5 1 2 3 4 5 1 2 3 4 5 1\n3 4 5 1 2 3 4 5 1 2 3 4 5 1 2\n4 5 1 2 3 4 5 1 2 3 4 5 1 2 3\n5 1 2 3 4 5 1 2 3 4 5 1 2 3 4\n1 2 3 4 5 1 2 3 4 5 1 2 3 4 5\n";
 			of.close();
 
 			bool result = q.loadAnswersFromFile(filename);
@@ -41,6 +41,16 @@ namespace lr3Test
 
 			Assert::IsTrue(result);
 			Assert::AreEqual(2, actual);
+		}
+
+		TEST_METHOD(KeepAnswersInArrayTest) {
+			questionnaire q;
+			int questionNumber = 0;
+
+			q.setAnswer(5);
+			q.keepAnswer(questionNumber, q.getAnswer());
+
+			Assert::AreEqual(5, q.getAnswerFromArray(0));
 		}
 	};
 }

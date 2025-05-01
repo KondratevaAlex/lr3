@@ -21,9 +21,11 @@ bool questionnaire::loadAnswersFromFile(string filename)
 	ifstream in(filename);
 	if (!in.is_open()) return false;
 
-	for (int i = 0; i < 2; i++) {
-		for (int j = 0; j < 2; j++) {
+	for (int i = 0; i < 15; i++) {
+		for (int j = 0; j < 15; j++) {
 			in >> answersMatr[i][j];
 		}
 	}
+	in.close();
+	return true;
 }
