@@ -28,6 +28,8 @@ public:
 	int getPossibleIllnessValue(int diseaseLine);
 	void sortDeseases();
 	int getMainDiagnose();
+	int getSecondDiagnose();
+	int getThirdDiagnose();
 	void chooseQuestion(int questionNumber);
 	string getQuestion();
 	void diagnoses(int diagnoseID);

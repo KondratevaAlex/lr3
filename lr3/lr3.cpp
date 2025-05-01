@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <conio.h>
 #include "questionnaire.h"
 
 using namespace std;
@@ -11,16 +12,74 @@ int main()
     setlocale(LC_ALL, "Rus");
 
     questionnaire q;
+    string quest,
+           diag;
+    int answ = -1;
     string filename = "answers.txt";
     
 
     if (q.loadAnswersFromFile(filename)) {
-        for (int i = 0; i < 15; i++) {
-            q.setAnswer(2);
-            q.setAnswerToLine(i);
+        cout << "       ВИРТУАЛЬНЫЙ ТЕРАПЕВТ" << "\n";
+        cout << "   Тест состоит из 15 вопросов, содержащих 5 ответов. Выберите один ответ из представленных наиболее подходящих к описанию вашего состояния." << "\n";
+        cout << "   По итогу программа определит, какой диагноз больше всего соответствует выбранным симптомам, и два схожих по симптоматике." << "\n";
+        cout << "\n" << "   ТЕСТ НЕ ЯВЛЯЕТСЯ ПОЛНОЦЕННЫМ ПОХОДОМ К ВРАЧУ" << "\n";
+        cout << "   После прохождения, настоятельно просим посетить Вас врача, если симптомы Вас серьезно беспокоят" << "\n";
+
+        cout << "       Для начала теста нажмите Enter" << "\n";
+
+        char c;
+        c = _getch();
+        if (c == 13) {
+            system("cls");
+            for (int i = 0; i < 15; i++) {
+                q.chooseQuestion(i);
+                quest = q.getQuestion();
+                cout << quest;
+                cout << "\nВаш ответ:   ";
+                cin >> answ;
+                while (answ > 5) {
+                    cout << "Введите ответ еще раз" << "\n";
+                    cout << "Ваш ответ:   ";
+                    cin >> answ;
+                }
+                q.setAnswer(answ);
+                q.setAnswerToLine(i);
+                system("cls");
+            }
+            q.countPossibleIllness();
+            q.sortDeseases();
+
+            int d = 0;
+            d = q.getMainDiagnose();
+
+            if (d == 0) {
+                cout << "К сожалению, мы не можем подобрать Вам диагноз на основе Ваших ответов. Пожалуйста, обратитесь к участковому терапевту для получения точного диагноза." << "\n";
+            }
+            else {
+                cout << "На основе полученных ответов на вопросы о Вашем самочувствии, можно предположить наличие следующих диагнозов:" << "\n";
+                d = q.getMainDiagnose();
+                if (d > 0) {
+                    cout << "   Основной - ";
+                    q.diagnoses(d);
+                    diag = q.getDiagnose();
+                    cout << diag;
+                }
+                d = q.getSecondDiagnose();
+                if (d > 0) {
+                    cout << "\n   Второй - ";
+                    q.diagnoses(d);
+                    diag = q.getDiagnose();
+                    cout << diag;
+                }
+                d = q.getThirdDiagnose();
+                if (d > 0) {
+                    cout << "\n   Третий - ";
+                    q.diagnoses(d);
+                    diag = q.getDiagnose();
+                    cout << diag;
+                }
+            }
         }
-        q.countPossibleIllness();
-        q.sortDeseases();
     }
 }
 

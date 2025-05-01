@@ -81,6 +81,11 @@ string questionnaire::getQuestion()
     return question;
 }
 
+int questionnaire::getThirdDiagnose()
+{
+    return thirdDiagnose;
+}
+
 string questionnaire::getDiagnose()
 {
     return diagnose;
@@ -196,6 +201,11 @@ void questionnaire::chooseQuestion(int questionNumber)
     default:
         break;
     }
+}
+
+int questionnaire::getSecondDiagnose()
+{
+    return secondDiagnose;
 }
 
 
