@@ -15,5 +15,13 @@ namespace lr3Test
 			questionnaire* q = new questionnaire;
 			Assert::IsNotNull(q);
 		}
+		TEST_METHOD(SetAndGetAnswerTest) {
+			questionnaire q;
+
+			q.setAnswer(3);
+			int actual = q.getanswer();
+
+			Assert::AreEqual(3, actual);
+		}
 	};
 }
