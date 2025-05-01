@@ -9,8 +9,10 @@ namespace lr3Test
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(CreateClassTest)
 		{
+			questionnaire* q = new questionnaire;
+			Assert::IsNotNull(q);
 		}
 	};
 }
