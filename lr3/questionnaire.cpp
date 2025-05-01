@@ -29,3 +29,13 @@ bool questionnaire::loadAnswersFromFile(string filename)
 	in.close();
 	return true;
 }
+
+void questionnaire::setAnswerToLine(int questionNumber)
+{
+	answerLine[questionNumber] = answer;
+}
+
+int questionnaire::getAnswerFromLine(int answerNumber)
+{
+	return answerLine[answerNumber];
+}

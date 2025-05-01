@@ -15,7 +15,10 @@ int main()
     
 
     if (q.loadAnswersFromFile(filename)) {
-        cout << "bip";
+        q.setAnswer(4);
+        q.setAnswerToLine(0);
+        int a = q.getAnswerFromLine(0);
+        cout << a;
     }
 }
 

@@ -48,9 +48,10 @@ namespace lr3Test
 			int questionNumber = 0;
 
 			q.setAnswer(5);
-			q.keepAnswer(questionNumber, q.getAnswer());
+			q.setAnswerToLine(questionNumber);
+			int actual = q.getAnswerFromLine(0);
 
-			Assert::AreEqual(5, q.getAnswerFromArray(0));
+			Assert::AreEqual(5, actual);
 		}
 	};
 }

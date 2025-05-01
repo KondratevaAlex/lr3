@@ -7,12 +7,15 @@ using namespace std;
 class questionnaire
 {
 private:
-	int answer;
-	int answersMatr[15][15];
+	int answer,
+		answersMatr[15][15],
+		answerLine[15];
 public:
 	void setAnswer(int ans);
 	int getAnswer();
 	int getAnswerFromMatrix(int i, int j);
 	bool loadAnswersFromFile(string filename);
+	void setAnswerToLine(int questionNumber);
+	int getAnswerFromLine(int answerNumber);
 };
 
