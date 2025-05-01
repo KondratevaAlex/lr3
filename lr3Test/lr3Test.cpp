@@ -1,8 +1,11 @@
 ﻿#include "pch.h"
 #include "CppUnitTest.h"
 #include "../lr3/questionnaire.h"
+#include <fstream>
+#include <string>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+using namespace std;
 
 namespace lr3Test
 {
@@ -30,14 +33,14 @@ namespace lr3Test
 
 			string filename = "test";
 			ofstream of(filename);
-			out << "1 2\n3 4\n";
+			of << "1 2\n3 4\n";
 			of.close();
 
-			int testMatr[2][2];
-			bool actual = loadAnswersFromFile(filename, testMatr);
+			bool result = q.loadAnswersFromFile(filename);
+			int actual = q.getAnswerFromMatrix(0, 1);
 
-			Assert::IsTrue(actual);
-			Assert::AreEqual(2, testMatr[0][1]);
+			Assert::IsTrue(result);
+			Assert::AreEqual(2, actual);
 		}
 	};
 }
