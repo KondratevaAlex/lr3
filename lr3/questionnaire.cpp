@@ -55,3 +55,21 @@ int questionnaire::getPossibleIllnessValue(int diseaseLine)
 {
 	return possibleIllnessLine[diseaseLine];
 }
+
+void questionnaire::sortDeseases()
+{
+	int diagnoseValue = 0;
+	for (int i = 0; i < 15; i++) {
+		if (possibleIllnessLine[i] > diagnoseValue) {
+			thirdDiagnose = secondDiagnose;
+			secondDiagnose = mainDiagnose;
+			mainDiagnose = i;
+			diagnoseValue = possibleIllnessLine[i];
+		}
+	}
+}
+
+int questionnaire::getMainDiagnose()
+{
+	return mainDiagnose;
+}

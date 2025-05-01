@@ -16,10 +16,11 @@ int main()
 
     if (q.loadAnswersFromFile(filename)) {
         for (int i = 0; i < 15; i++) {
-            q.setAnswer(4);
+            q.setAnswer(2);
             q.setAnswerToLine(i);
         }
         q.countPossibleIllness();
+        q.sortDeseases();
     }
 }
 

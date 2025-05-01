@@ -8,6 +8,9 @@ class questionnaire
 {
 private:
 	int answer,
+		mainDiagnose = -1,
+		secondDiagnose = -1,
+		thirdDiagnose = -1,
 		answersMatr[15][15],
 		answerLine[15] = { 0 },
 		possibleIllnessLine[15] = { 0 };
@@ -20,5 +23,7 @@ public:
 	int getAnswerFromLine(int answerNumber);
 	void countPossibleIllness();
 	int getPossibleIllnessValue(int diseaseLine);
+	void sortDeseases();
+	int getMainDiagnose();
 };
 
