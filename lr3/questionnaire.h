@@ -14,6 +14,9 @@ private:
 		answersMatr[15][15],
 		answerLine[15] = { 0 },
 		possibleIllnessLine[15] = { 0 };
+	string diagnose,
+		   question;
+
 public:
 	void setAnswer(int ans);
 	int getAnswer();
@@ -25,5 +28,6 @@ public:
 	int getPossibleIllnessValue(int diseaseLine);
 	void sortDeseases();
 	int getMainDiagnose();
+
 };
 

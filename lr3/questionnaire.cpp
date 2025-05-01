@@ -1,5 +1,6 @@
 #include "questionnaire.h"
-
+#include <iostream>
+using namespace std;
 
 void questionnaire::setAnswer(int ans)
 {

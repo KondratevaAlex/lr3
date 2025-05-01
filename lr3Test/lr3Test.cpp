@@ -96,5 +96,17 @@ namespace lr3Test
 			int actual = q.getMainDiagnose();
 			Assert::AreEqual(0, actual);
 		}
+
+		TEST_METHOD(QuestionTextTest) {
+			questionnaire q;
+
+			string expected = "1. Как давно начались ваши симптомы?\n   1 - Сегодня\n   2 - 1-3 дня назад\n   3 - 4-7 дней назад\n   4 - Более недели назад\n   5 - Несколько месяцев или больше";
+			string
+
+			q.chooseQuestion(0);
+			string actual = q.getQuestion();
+
+			Assert::AreEqual(expected, actual);
+		}
 	};
 }
