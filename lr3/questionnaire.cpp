@@ -76,6 +76,58 @@ void questionnaire::sortDeseases()
 	}
 }
 
+string questionnaire::getQuestion()
+{
+    return question;
+}
+
+string questionnaire::getDiagnose()
+{
+    return diagnose;
+}
+
+void questionnaire::diagnoses(int diagnoseID)
+{
+    switch (diagnoseID)
+    {
+    case 0:
+        diagnose = "   ОРВИ / Простуда";
+        break;
+    case 1:
+        diagnose = "   Грипп";
+        break;
+    case 2:
+        diagnose = "   Пневмония";
+        break;
+    case 3:
+        diagnose = "   Ангина";
+        break;
+    case 4:
+        diagnose = "   Аллергия";
+        break;
+    case 5:
+        diagnose = "   Бронхиальная астма";
+        break;
+    case 6:
+        diagnose = "   Пищевое отравление";
+        break;
+    case 7:
+        diagnose = "   Кишечная инфекция";
+        break;
+    case 8:
+        diagnose = "   Цистит";
+        break;
+    case 9:
+        diagnose = "   Мигрень";
+        break;
+    case 10:
+        diagnose = "   Сахарный диабет";
+        break;
+    default:
+        break;
+    }
+}
+
 void questionnaire::chooseQuestion(int questionNumber)
 {
     switch (questionNumber)
@@ -146,7 +198,4 @@ void questionnaire::chooseQuestion(int questionNumber)
     }
 }
 
-string questionnaire::getQuestion()
-{
-    return question;
-}
+
