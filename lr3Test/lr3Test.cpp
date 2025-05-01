@@ -1,5 +1,6 @@
 ﻿#include "pch.h"
 #include "CppUnitTest.h"
+#include "../lr3/questionnaire.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 

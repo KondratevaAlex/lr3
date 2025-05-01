@@ -140,6 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lr3.cpp" />
+    <ClCompile Include="questionnaire.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="questionnaire.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
