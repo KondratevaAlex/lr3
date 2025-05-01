@@ -107,5 +107,16 @@ namespace lr3Test
 
 			Assert::AreEqual(expected, actual);
 		}
+
+		TEST_METHOD(DiagnoseTextTest) {
+			questionnaire q;
+
+			string expected = "Мигрень";
+
+			q.diagnoses(9);
+			string actual = q.getDiagnose();
+
+			Assert::AreEqual(expected, actual);
+		}
 	};
 }
