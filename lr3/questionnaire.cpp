@@ -39,3 +39,19 @@ int questionnaire::getAnswerFromLine(int answerNumber)
 {
 	return answerLine[answerNumber];
 }
+
+void questionnaire::countPossibleIllness()
+{
+	for (int i = 0; i < 15; i++) {
+		for (int j = 0; j < 15; j++) {
+			if (answersMatr[i][j] == answerLine[j]) {
+				possibleIllnessLine[i]++;
+			}
+		}
+	}
+}
+
+int questionnaire::getPossibleIllnessValue(int diseaseLine)
+{
+	return possibleIllnessLine[diseaseLine];
+}
