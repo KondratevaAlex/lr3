@@ -15,10 +15,11 @@ int main()
     
 
     if (q.loadAnswersFromFile(filename)) {
-        q.setAnswer(4);
-        q.setAnswerToLine(0);
-        int a = q.getAnswerFromLine(0);
-        cout << a;
+        for (int i = 0; i < 15; i++) {
+            q.setAnswer(4);
+            q.setAnswerToLine(i);
+        }
+        q.countPossibleIllness();
     }
 }
 
